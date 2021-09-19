@@ -1,0 +1,3 @@
+> HACS			https://github.com/hacs/integration
++--> Frontend
+|  +-->  Timer Bar Card	https://github.com/rianadon/timer-bar-card

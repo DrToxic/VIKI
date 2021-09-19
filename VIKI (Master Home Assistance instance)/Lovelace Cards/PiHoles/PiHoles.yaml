@@ -1,0 +1,66 @@
+type: custom:swipe-card
+parameters:
+  effect: coverflow
+  grabCursor: true
+  centeredSlides: true
+  slidesPerView: auto
+  coverflowEffect:
+    rotate: 50
+    stretch: 0
+    depth: 100
+    modifier: 1
+    slideShadows: true
+  pagination:
+    type: bullets
+cards:
+  - cards:
+      - cards:
+          - entity: sensor.pihole_dns_queries_today
+            name: DNS Queries (24 hours)
+            type: entity
+          - entity: sensor.pihole_ads_blocked_today
+            name: Blocked  (24 hours)
+            type: entity
+            unit: queries
+        type: horizontal-stack
+      - entity: sensor.pihole_ads_percentage_blocked_today
+        name: DNS Queries blocked
+        type: custom:bar-card
+        positions:
+          indicator: 'off'
+      - entities:
+          - entity: sensor.pihole_dns_queries_cached
+            name: DNS Queries Cached
+          - entity: sensor.pihole_dns_queries_forwarded
+            name: DNS Queries Forwarded
+          - entity: sensor.pihole_dns_unique_domains
+            name: Unique Domains Poked
+          - entity: sensor.pihole_domains_blocked
+            name: Blocked Domains
+        type: entities
+    type: vertical-stack
+  - cards:
+      - cards:
+          - entity: sensor.pihole2_dns_queries_today
+            name: DNS Queries (24 hours)
+            type: entity
+          - entity: sensor.pihole2_ads_blocked_today
+            name: Blocked  (24 hours)
+            type: entity
+            unit: queries
+        type: horizontal-stack
+      - entity: sensor.pihole2_ads_percentage_blocked_today
+        type: custom:bar-card
+        positions:
+          indicator: 'off'
+      - entities:
+          - entity: sensor.pihole2_dns_queries_cached
+            name: DNS Queries Cached
+          - entity: sensor.pihole2_dns_queries_forwarded
+            name: DNS Queries Forwarded
+          - entity: sensor.pihole2_dns_unique_domains
+            name: Unique Domains Poked
+          - entity: sensor.pihole2_domains_blocked
+            name: Blocked Domains
+        type: entities
+    type: vertical-stack

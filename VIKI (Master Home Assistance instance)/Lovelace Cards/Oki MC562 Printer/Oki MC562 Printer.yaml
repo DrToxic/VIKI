@@ -1,0 +1,155 @@
+type: custom:swipe-card
+parameters:
+  effect: coverflow
+  grabCursor: true
+  centeredSlides: true
+  slidesPerView: auto
+  coverflowEffect:
+    rotate: 50
+    stretch: 0
+    depth: 100
+    modifier: 1
+    slideShadows: true
+  pagination:
+    type: bullets
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entity
+            entity: sensor.mc562
+          - type: entity
+            entity: sensor.mc562_uptime
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_belt_unit_oki_data_corp
+            name: Belt Unit
+            severity:
+              - from: '0'
+                to: '10'
+                color: ff0000
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_black_toner_cartridge_oki_data_corp
+            name: Toner
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#000000'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_cyan_toner_cartridge_oki_data_corp
+            name: Toner
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#00ffff'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_magenta_toner_cartridge_oki_data_corp
+            name: Toner
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#FF00FF'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_yellow_toner_cartridge_oki_data_corp
+            name: Toner
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#bfbf00'
+            positions:
+              name: outside
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entity
+            entity: sensor.mc562
+          - type: entity
+            entity: sensor.mc562_uptime
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_fuser_unit_oki_data_corp
+            name: Fuser Unit
+            severity:
+              - from: '0'
+                to: '10'
+                color: ff0000
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_black_image_drum_unit_oki_data_corp
+            name: Imaging Drum
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#000000'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_cyan_image_drum_unit_oki_data_corp
+            name: Imaging Drum
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#00ffff'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_magenta_image_drum_unit_oki_data_corp
+            name: Imaging Drum
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#ff00ff'
+            positions:
+              name: outside
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.mc562_yellow_image_drum_unit_oki_data_corp
+            name: Imaging Drum
+            severity:
+              - from: '0'
+                to: '10'
+                color: '#ff0000'
+              - from: '11'
+                to: '100'
+                color: '#6f6f00'
+            positions:
+              name: outside

@@ -1,0 +1,56 @@
+cards:
+  - cards:
+      - detail: 2
+        entity: sensor.processor_use
+        graph: line
+        hours_to_show: 1
+        name: Processor use (Last hour)
+        type: sensor
+      - cards:
+          - entity: sensor.load_1m
+            type: entity
+          - entity: sensor.load_5m
+            type: entity
+          - entity: sensor.load_15m
+            type: entity
+        type: horizontal-stack
+      - cards:
+          - entity: sensor.memory_use_percent
+            max: 100
+            min: 0
+            name: Memory use
+            severity:
+              green: 0
+              red: 90
+              yellow: 75
+            type: gauge
+          - cards:
+              - entity: sensor.memory_use
+                name: Used
+                type: entity
+              - entity: sensor.memory_free
+                name: Free
+                type: entity
+            type: vertical-stack
+        type: horizontal-stack
+      - cards:
+          - entity: sensor.disk_use_percent_home
+            max: 100
+            min: 0
+            name: Disk use
+            severity:
+              green: 0
+              red: 90
+              yellow: 75
+            type: gauge
+          - cards:
+              - entity: sensor.disk_use_home
+                name: Used
+                type: entity
+              - entity: sensor.disk_free_home
+                name: Free
+                type: entity
+            type: vertical-stack
+        type: horizontal-stack
+    type: vertical-stack
+type: vertical-stack

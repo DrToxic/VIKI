@@ -1,0 +1,4 @@
+> HACS			https://github.com/hacs/integration
++--> Frontend
+|  +--> Swipe Card	https://github.com/bramkragten/swipe-card
+|  +-->  Bar Card	https://github.com/custom-cards/bar-card

@@ -1,0 +1,33 @@
+alias: Light the bong
+description: Turn off the ceiling fan for 30 seconds.
+trigger:
+  - platform: event
+    event_type: ''
+    context:
+      user_id:
+        - [DrToxic]
+condition:
+  - condition: device
+    device_id: [SONOFF-Switch]
+    domain: fan
+    entity_id: fan.ceiling_fan
+    type: is_on
+action:
+#  - service: media_player.play_media         ---------\
+#    target:                                            \
+#      device_id: [Audio Output]                         \ Kinda
+#    data:                                               / Broken
+#      media_content_id: /SFX/"The Countdown Clock.wav" /
+#      media_content_type: music              ---------/
+  - device_id: [SONOFF-Switch]
+    domain: fan
+    entity_id: fan.ceiling_fan
+    type: turn_off
+  - wait_template: ''
+    timeout: '0:00:30'
+    continue_on_timeout: true
+  - device_id: [SONOFF-Switch]
+    domain: fan
+    entity_id: fan.ceiling_fan
+    type: turn_on
+mode: single

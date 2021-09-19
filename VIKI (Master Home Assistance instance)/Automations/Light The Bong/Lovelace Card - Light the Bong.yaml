@@ -1,0 +1,20 @@
+type: vertical-stack
+cards:
+  - type: button
+    tap_action:
+      action: call-service
+      service: automation.trigger
+      service_data:
+        skip_condition: false
+      target:
+        entity_id: automation.light_the_bong
+    entity: fan.ceiling_fan
+    show_state: false
+    icon: hass:smoking
+    show_name: true
+    name: Light the bong
+  - type: custom:timer-bar-card
+    entity: fan.ceiling_fan
+    duration:
+      fixed: '0:00:28'
+    active_state: 'off'
